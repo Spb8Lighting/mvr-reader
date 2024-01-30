@@ -1,0 +1,263 @@
+body {
+  min-height: 100vh;
+}
+#actionbar {
+  margin-right: 8px;
+  float: right;
+}
+
+#actionbar button {
+  display: none;
+  margin-bottom: 8px
+}
+
+.loaded header>div {
+  float: right;
+}
+
+.loaded form,
+.loaded #articles>div:first-of-type {
+  display: none;
+}
+h1 {
+  font-size: 24px;
+}
+
+h1 span {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-right: 0.5em;
+}
+
+h2 {
+  z-index: 2;
+}
+
+h2 span>span {
+  font-size: 1.1rem;
+}
+
+h2 img {
+  float: left;
+  margin-bottom: 12px;
+}
+
+#articles {
+  background-color: rgba(128, 128, 128, 0.5);
+  /*overflow-y: scroll;*/
+}
+
+#content>div {
+  display: none
+}
+
+#content>div:nth-of-type(1) {
+  display: block;
+}
+
+fieldset {
+  border: none;
+  border-top-left-radius: 0 !important;
+}
+
+legend {
+  margin-left: -16px !important;
+  margin-bottom: 0 !important;
+  padding-top: 5px !important;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+thead tr {
+  background-color: #2196F3;
+}
+
+tr {
+  background-color: rgba(128, 128, 128, 1);
+}
+
+h2,
+nav {
+  display: none;
+}
+
+nav>button:first-child {
+  background: url(./svg/lighting.svg) no-repeat left center;
+  padding-left: 36px!important;
+}
+
+.w3-blue {
+  color: black !important;
+  background-color: #2196F3;
+}
+
+.w3-specific-grey {
+  background-color: rgba(128, 128, 128, 1);
+}
+
+.fixtureColor {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 5px;
+}
+
+/* ***************   SVG   ************** */
+#dropArea * {
+  cursor: pointer;
+}
+
+#dropArea span {
+  display: block;
+  width: 100%;
+}
+
+svg {
+  width: 256px;
+  margin: 0 auto;
+  display: block;
+}
+
+@keyframes pulse {
+  40% {
+    transform: scale(.9) rotate(5deg);
+  }
+
+  80% {
+    transform: scale(.9) rotate(-5deg);
+  }
+}
+
+#dropArea {
+  display: block;
+  border: 5px dashed rgb(33, 150, 243, 0);
+  text-align: center;
+  font-weight: bold;
+}
+
+#dropArea:hover,
+#dropArea.hover {
+  border-color: rgb(33, 150, 243, 1);
+}
+
+#dropArea input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+
+/* Animation */
+#dropArea,
+#dropArea * {
+  transition-property: fill, stop-color, border-color;
+  transition-duration: 1s
+}
+
+#dropArea.hover svg,
+#dropArea:hover svg {
+  animation: pulse 2s infinite;
+}
+
+/* Background */
+#svg_background {
+  fill: white;
+  filter: url(#svg_shadow);
+}
+
+#dropArea:hover #svg_background,
+#dropArea.hover #svg_background {
+  fill: #160E63;
+}
+
+/* Structure */
+#svg_structure {
+  fill: url(#FX_LG_structure);
+}
+
+/* Text & Title */
+#svg_text {
+  fill: white;
+}
+
+#svg_title {
+  fill: url(#LG_title);
+  stroke: url(#LG_titleStroke);
+  filter: url(#svg_shadow);
+}
+
+#LG_title stop {
+  stop-opacity: 1;
+  stop-color: #2196F3;
+}
+
+#dropArea:hover #LG_title stop:first-child,
+#dropArea.hover #LG_title stop:first-child {
+  stop-color: #f56abc;
+}
+
+#dropArea:hover #LG_title stop:last-child,
+#dropArea.hover #LG_title stop:last-child {
+  stop-color: #160E63;
+}
+
+#LG_titleStroke stop {
+  stop-opacity: 1;
+  stop-color: #2196F3;
+}
+
+#dropArea:hover #LG_titleStroke stop:first-child,
+#dropArea.hover #LG_titleStroke stop:first-child {
+  stop-color: #eeddfb;
+}
+
+#dropArea:hover #LG_titleStroke stop:last-child,
+#dropArea.hover #LG_titleStroke stop:last-child {
+  stop-color: #f1eafc;
+}
+
+/* Corner */
+#svg_corner {
+  fill: url(#LG_corner);
+}
+
+#LG_corner stop:first-child {
+  stop-opacity: 0;
+}
+
+#LG_corner stop:last-child {
+  stop-opacity: 1;
+  stop-color: #2196F3;
+}
+
+#dropArea:hover #LG_corner stop:last-child,
+#dropArea.hover #LG_corner stop:last-child {
+  stop-color: #782375;
+}
+
+/* Boundary */
+#svg_boundary {
+  fill: url(#FX_LG_boundary);
+}
+
+#LG_boundary stop {
+  stop-opacity: 1;
+  stop-color: #2196F3;
+}
+
+#dropArea:hover #LG_boundary stop:first-child,
+#dropArea.hover #LG_boundary stop:first-child {
+  stop-color: #bf7ed9;
+}
+
+#dropArea:hover #LG_boundary stop:last-child,
+#dropArea.hover #LG_boundary stop:last-child {
+  /*stop-color: #d0a5b1;*/
+  stop-color: yellow;
+}

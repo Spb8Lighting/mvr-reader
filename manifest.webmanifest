@@ -1,0 +1,36 @@
+{
+  "short_name": "MVR Reader",
+  "name": "MVR - Fixture Patch Reader",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "#262626",
+  "display": "standalone",
+  "theme_color": "#262626",
+  "shortcuts": [
+    {
+      "name": "MVR Reader",
+      "short_name": "MVR Reader",
+      "description": "MVR - Fixture Patch Reader",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "description": "MVR - Fixture Patch Reader"
+}

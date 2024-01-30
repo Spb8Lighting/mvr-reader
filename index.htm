@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVR - Patch Reader</title>
+  <meta name="description"
+    content="This web application can read the fixture patch of your MVR (My Virtual Rig) file. MVR Fixture Patch Reader by Sylvain Guiblain">
+  <base href="./">
+  <link rel=“canonical” href="https://mvr-reader.com" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Sylvain Guiblain">
+  <meta name="geo.placename" content="Toulouse, Haute-Garonne, France">
+  <meta name="theme-color" content="#262626">
+  <link rel="manifest" href="/beta/manifest.webmanifest">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/simple-datatables@v5.0.3/dist/style.css" rel="stylesheet" type="text/css">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="css.css">
+</head>
+
+<body class="w3-theme-d3 w3-small">
+  <header class="w3-row">
+    <div>
+      <h1 class="w3-right-align"><a href="./"><abbr title="My Virtual Rig">MVR</abbr> - Patch
+          Reader</a><span>v0.92</span></h1>
+      <span id="actionbar">
+        <button class="w3-button w3-round-large w3-blue csv">Export *.csv</button>
+        <button class="w3-button w3-round-large w3-blue v3d">3D View <em>(alpha)</em></button>
+      </span>
+    </div>
+    <h2></h2>
+  </header>
+  <nav class="w3-row w3-bar w3-theme-d3">
+    <button class="w3-button w3-bar-item w3-blue" data-target="table-All">Fixtures</button>
+  </nav>
+  <div class="w3-row" id="articles">
+    <div class="w3-round-large w3-margin w3-panel w3-blue w3-card-4">
+      <p>MVR (My Virtual Rig) is an open-file-format container that packages the GDTF files for all of the lighting
+        fixtures in your design, along with a complete 3D model and data describing the positions and 3D elements.
+        <em>(source: <a href="https://university.vectorworks.net/mod/page/view.php?id=202">Vectorworks</a>)</em>
+      </p>
+      <p>This web-application allow you to very quickly read its <strong>Fixture Patch</strong>. <em>Everything is
+          local, nothing is uploaded.</em></p>
+    </div>
+    <form>
+      <fieldset class="w3-round-large w3-margin w3-panel w3-specific-grey w3-card-4">
+        <legend class="w3-round-large w3-panel w3-specific-grey">MVR - Patch Reader</legend>
+        <div id="dropArea" class="w3-round-large w3-panel">
+          <label for="MVR-File">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+              version="1.1" viewBox="0 0 180.075 217.712">
+              <defs>
+                <linearGradient id="LG_titleStroke" x1="-197.898" x2="-110.396" y1="29.768" y2="29.768"
+                  gradientUnits="userSpaceOnUse">
+                  <stop offset="0" />
+                  <stop offset="1" />
+                </linearGradient>
+                <linearGradient id="LG_boundary">
+                  <stop offset="0" />
+                  <stop offset="1" />
+                </linearGradient>
+                <linearGradient id="LG_corner" x1="-63.477" x2="-24.524" y1="-2.591" y2="-2.591"
+                  gradientUnits="userSpaceOnUse">
+                  <stop offset="0" />
+                  <stop offset="1" />
+                </linearGradient>
+                <linearGradient id="LG_title" x1="-189.598" x2="-115.197" y1="28.018" y2="28.018"
+                  gradientUnits="userSpaceOnUse">
+                  <stop offset="0" />
+                  <stop offset="1" />
+                </linearGradient>
+                <linearGradient xlink:href="#LG_boundary" id="FX_LG_boundary" x1="-181.697" x2="-23.824" y1="77.846"
+                  y2="77.846" gradientUnits="userSpaceOnUse" spreadMethod="reflect" />
+                <linearGradient xlink:href="#LG_boundary" id="FX_LG_structure" x1="-156.545" x2="-48.703" y1="109.751"
+                  y2="109.751" gradientUnits="userSpaceOnUse" />
+                <filter id="svg_shadow" width="1.195" height="1.36" x="-.122" y="-.136"
+                  color-interpolation-filters="sRGB">
+                  <feFlood flood-color="#000" flood-opacity=".251" result="flood" />
+                  <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+                  <feGaussianBlur in="composite1" result="blur" stdDeviation="2" />
+                  <feOffset dx="-3.5" dy="3.5" result="offset" />
+                  <feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" />
+                </filter>
+              </defs>
+              <g transform="translate(197.898 28.76)">
+                <path id="svg_background"
+                  d="m-63.475-21.52 38.452 38.395V171.85c0 2.943-2.194 5.402-5.403 5.402h-144.67c-3.654 0-5.4-1.603-5.4-5.402V-16.158c0-2.761 1.606-5.404 5.4-5.402z" />
+                <path id="svg_corner" d="m-62.977-21.56 2.63 31.324c.233 2.786 4.422 5.75 7.217 5.828l28.107.786z" />
+                <path id="svg_boundary"
+                  d="M-175.096-22.76a6.6 6.6 0 0 0-6.601 6.602V8.174h1.201v-24.332a5.376 5.376 0 0 1 5.4-5.402H-63.47a.5.5 0 0 0-.005.04l2.63 31.325c.136 1.626 1.347 3.133 2.841 4.285 1.494 1.151 3.294 1.958 4.862 2.002l28.105.785a.5.5 0 0 0 .014-.002V171.85c0 3.002-2.4 5.402-5.403 5.402h-144.67c-3.003 0-5.4-2.4-5.4-5.402V47.863h-1.201V171.85a6.6 6.6 0 0 0 6.601 6.601h144.67a6.6 6.6 0 0 0 6.602-6.601V16.378L-62.977-22.76zm112.73 2.518 36.1 36.086-26.85-.752c-1.227-.035-2.92-.748-4.278-1.795-1.358-1.047-2.358-2.414-2.456-3.575z" />
+                <path id="svg_title" d="M-188.998 8.174h73.202v39.689h-73.202z" />
+                <path id="svg_text"
+                  d="M-174.164 20.808v14.641h1V22.905l5.613 11.087L-162 22.92v12.529h1V20.808h-1.06l-5.495 10.962-5.55-10.962zm17.535 0a.5.5 0 0 0 .027.173l5.321 14.469h1.061l4.865-14.483a.5.5 0 0 0 .024-.16h-1.027l-4.41 13.136-4.832-13.135zm15.986 0V35.449h1v-6.012h4.926l3.103 6.013h1.124l-3.101-6.013h.398c.662 0 1.247-.355 1.685-.82.439-.464.756-1.062.756-1.709v-3.564c0-.647-.315-1.244-.754-1.711-.431-.46-1.005-.814-1.656-.825zm1 .998h6.45c.273 0 .661.193.959.51.297.318.482.737.482 1.028v3.564c0 .29-.185.706-.482 1.022-.298.315-.686.508-.96.508h-6.449z" />
+                <path id="svg_structure"
+                  d="M-152.33 68.852a.25.25 0 0 0-.072.072.25.25 0 0 0-.104-.002.25.25 0 0 0-.072.178l-.002.002V132.646c0 .224.27.335.428.176l7.65-7.693h.014l7.65 7.693a.25.25 0 0 0 .428-.176V77.314h9.654v5.381l-1.428-.71a.25.25 0 1 0-.222.447l3.32 1.654a.25.25 0 1 0 .223-.447l-1.393-.694v-5.63h15.418v5.439h-1.574a.25.25 0 0 0 0 .5h1.638a.25.25 0 0 0 .186.098.25.25 0 0 0 .188-.098h1.867a.25.25 0 0 0 0-.5h-1.805v-5.44h15.428v5.44h-1.803a.25.25 0 0 0 0 .5h1.865a.25.25 0 0 0 .188.098.25.25 0 0 0 .185-.098h1.639a.25.25 0 0 0 0-.5h-1.574v-5.44h15.418v5.631l-1.393.694a.25.25 0 0 0 .223.447l3.322-1.654a.25.25 0 0 0-.223-.448l-1.43.711v-5.38h9.655v55.331c0 .224.27.335.428.176l7.65-7.693h.016l7.65 7.693a.25.25 0 0 0 .426-.176V85.057a.222.222 0 0 0 0-.004V69.1a.143.143 0 0 0-.008-.007.25.25 0 0 0-.066-.172.25.25 0 0 0-.174-.069l-.002-.002h-.002zm.596.5h14.478l-7.24 7.369zm15.324 0h67.572v7.462h-67.572zm68.42 0h14.476l-7.238 7.369zm-84.09.359 6.976 7.103h-6.976zm15.17 0v7.103h-6.977zm68.572 0 6.977 7.103h-6.977zm15.17.002v7.101h-6.975zm-98.912 7.601h7.002l-7.002 7.13zm8.168 0h7.002v7.13zm75.574 0h7.002l-7.002 7.13zm8.17 0h7v7.127zm-84.326.12 7.24 7.37h-14.48zm83.742 0 7.238 7.37h-14.478zm-66.455 5.834c-.168.076-.291.239-.367.455-.118.335-.03.68.06.957.09.276.201.49.201.49a.843.843 0 0 0 .006.01l15.666 26.924-25.175 21.97h-19.479a.25.25 0 0 0-.25.25v11.989c0 .138.112.25.25.25h18.346v3.837c0 .139.112.25.25.25h70.15a.25.25 0 0 0 .25-.25v-3.837h18.346a.25.25 0 0 0 .25-.25v-11.989a.25.25 0 0 0-.25-.25h-19.479l-25.173-21.97L-77.94 85.18a.166.166 0 0 0 .004-.01s.113-.214.203-.49c.09-.277.178-.622.06-.957-.076-.216-.201-.38-.369-.455a.604.604 0 0 0-.467 0 1.148 1.148 0 0 0-.416.285l.018-.018-23.719 20.7-23.717-20.7.018.018s-.162-.188-.416-.285a.604.604 0 0 0-.467 0zm.205.455c.012-.006.034-.008.084.011.1.039.23.16.23.16l.018.018 23.666 20.652-8.254 7.204-15.611-26.83s-.095-.18-.17-.413c-.075-.232-.11-.509-.065-.636.048-.137.09-.161.102-.166zm48.756 0c.012.005.054.03.101.166.045.127.011.404-.064.636-.073.227-.16.395-.164.403L-93.99 111.77l-8.254-7.206 23.666-20.652a.25.25 0 0 0 .02-.017s.129-.122.23-.16c.05-.02.07-.018.082-.012zm-73.49 1.582h14.48l-7.24 7.406zm83.744 0h14.48l-7.24 7.406zm-68.918.361v14.805l-7.236-7.403zm68.572 0 7.236 7.402-7.236 7.403zm-83.742.002 7.234 7.4-7.234 7.4zm98.912 0v14.8l-7.234-7.4zm-91.328 7.758 7.242 7.408h-14.482zm83.744 0 7.242 7.408h-14.484zm-90.977 7.908h14.467l-7.234 7.295zm83.743 0h14.468l-7.234 7.297zm-.352.356 6.942 7h-6.942zm-83.742.002 6.94 6.998h-6.94zm15.17 0v6.998h-6.94zm83.742 0v6.998h-6.94zm-49.455 3.205 8.377 7.31-8.377 14.399-8.379-14.399zm-49.457 4.293h7.03l-7.03 7.09zm8.14 0h7.03v7.09zm75.602 0h7.031l-7.03 7.091zm8.14 0h7.03v7.09zm-84.298.15 7.484 7.547-7.484 7.525-7.483-7.525zm83.744 0 7.482 7.547-7.482 7.525-7.482-7.525zm-50.633 3.203 8.473 14.56-4.057 6.971h-29.088zm17.524 0 24.672 21.531h-29.088l-4.057-6.97zm25.523 4.947 7.098 7.139h-7.098zm-83.742.002 7.096 7.137h-7.096zm15.17 0v7.137h-7.096zm83.742 0v7.137h-7.096zm-98.912 7.637h6.873l-6.873 6.912zm8.297 0h6.873v6.912zm75.445 0h6.873l-6.873 6.914zm8.299 0h6.871v6.912zm-42.584 2.47 3.766 6.475h-7.534zm-53.422 6.975h106.842v11.489H-67.3v-3.746a.25.25 0 0 0-.25-.25h-70.15a.25.25 0 0 0-.25.25v3.746h-18.096zm18.596 7.993h69.65v7.584h-69.65v-3.838z" />
+              </g>
+            </svg>
+            <span>Drop your .mvr file or click to read!</span>
+            <input type="file" name="MVR-File" accept=".mvr" id="MVR-File" /></label>
+        </div>
+      </fieldset>
+    </form>
+    <div id="content"></div>
+    <div id="v3d"></div>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/simple-datatables@v5.0.3"></script>
+  <script defer src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@latest/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@latest/examples/jsm/",
+        "unzip": "https://unpkg.com/unzipit@latest/dist/unzipit.module.js"
+      }
+    }
+  </script>
+  <script defer type="module" src="app.js"></script>
+</body>
+</html>
