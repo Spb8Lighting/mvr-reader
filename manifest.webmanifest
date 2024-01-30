@@ -3,12 +3,12 @@
   "name": "MVR - Fixture Patch Reader",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "favicon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/favicon.svg",
+      "src": "favicon.svg",
       "type": "image/svg+xml",
       "sizes": "192x192"
     }
@@ -26,7 +26,7 @@
       "url": "/",
       "icons": [
         {
-          "src": "/favicon.svg",
+          "src": "favicon.svg",
           "sizes": "192x192"
         }
       ]
