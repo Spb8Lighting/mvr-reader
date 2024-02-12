@@ -36,8 +36,8 @@ export const createNavigation = (nav, articles, layerFixtures) => {
   if (buttons.length > 1) {
     buttons.forEach(button => {
       button.addEventListener('click', event => {
-        const target = event.target
-        const targetID = target.getAttribute('data-target')
+        const target = event.currentTarget
+        const targetID = target.dataset.target
         // Show the right layer
         divLayers.forEach(divLayer => {
           const table = divLayer.querySelector('table')
@@ -51,7 +51,7 @@ export const createNavigation = (nav, articles, layerFixtures) => {
         })
         // Set button as active
         buttons.forEach(otherButton => {
-          if (otherButton.getAttribute('data-target') !== targetID) {
+          if (otherButton.dataset.target !== targetID) {
             otherButton.classList.remove('w3-blue')
           } else {
             otherButton.classList.add('w3-blue')
